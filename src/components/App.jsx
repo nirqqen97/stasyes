@@ -1,4 +1,13 @@
+import { useState } from "react";
+import { Btn,Cute } from "./App.styled";
+
 export const App = () => {
+  const [first, setfirst] = useState(false);
+  
+  const Click = () =>{
+    setfirst(prev => !prev)
+
+  }
   return (
     <div
       style={{
@@ -10,7 +19,9 @@ export const App = () => {
         color: '#010101'
       }}
     >
-      React homework template
+    ТЫ ЛОХ
+    <Btn type="button" onClick={Click}>Клацни</Btn>
+    {first && <Cute>Стася ЛОХ</Cute>}
     </div>
   );
 };
